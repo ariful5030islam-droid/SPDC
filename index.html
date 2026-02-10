@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>স্টেশন পাড়া দাওয়াহ্ কমিউনিটি | ইসলামিক সংগঠন</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #0d5e46 0%, #0a4d38 100%);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+            color: #ffd166;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: #ffd166;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #ffd166;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(13, 94, 70, 0.9), rgba(13, 94, 70, 0.8)), url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #ffd166;
+            color: #0a4d38;
+            padding: 14px 35px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 209, 102, 0.3);
+        }
+        
+        .cta-button:hover {
+            background-color: #ffc145;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 209, 102, 0.4);
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #0d5e46;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background-color: #ffd166;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+        
+        /* Activities Section */
+        .activities {
+            background-color: #f1f8f5;
+        }
+        
+        .activity-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .activity-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .activity-icon {
+            background-color: #0d5e46;
+            color: white;
+            font-size: 2.5rem;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .activity-content {
+            padding: 25px;
+        }
+        
+        .activity-content h3 {
+            color: #0d5e46;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        /* সদস্য ফরম সেকশন */
+        .membership-form {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9f5f0 100%);
+        }
+        
+        .form-container {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .form-header h3 {
+            color: #0d5e46;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .form-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .form-frame {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 25px;
+        }
+        
+        .form-notes {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 25px;
+            border-left: 4px solid #0d5e46;
+        }
+        
+        .form-notes p {
+            color: #555;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .form-notes i {
+            color: #0d5e46;
+            margin-top: 3px;
+        }
+        
+        .direct-link {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #eee;
+        }
+        
+        .direct-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #0d5e46;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .direct-link a:hover {
+            background: #0a4d38;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(10, 77, 56, 0.2);
+        }
+        
+        /* Team Section */
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .member-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-color: #e9f5f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: #0d5e46;
+        }
+        
+        .team-member h4 {
+            color: #0d5e46;
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+        
+        .team-member p {
+            color: #666;
+            font-style: italic;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: #f1f8f5;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            background-color: #0d5e46;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h4 {
+            color: #0d5e46;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #0a3b2c;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #ffd166;
+        }
+        
+        .footer-links h4, .footer-social h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #ffd166;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #ffd166;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: #ffd166;
+            color: #0a4d38;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.3rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .form-container {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #0a4d38;
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .form-container {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 70px 0;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .form-header h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-mosque"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>স্টেশন পাড়া দাওয়াহ্ কমিউনিটি</h1>
+                    <p>ইসলামিক শিক্ষা ও সমাজ উন্নয়ন</p>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-links" id="navLinks">
+                <a href="#home">হোম</a>
+                <a href="#about">আমাদের সম্পর্কে</a>
+                <a href="#activities">আমাদের লক্ষ্য</a>
+                <a href="#membersform">সদস্য ফরম</a>
+                <a href="#team">কমিটি</a>
+                <a href="#contact">যোগাযোগ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>"সঠিক ইলমে গড়ি জীবন, সুন্নাহর আলোয় জাগুক মন।"</h2>
+            <p>স্টেশন পাড়া দাওয়াহ্ কমিউনিটি একটি সামাজিক সেবা মূলক প্লাটফর্ম। মুসলিমদের মাঝে ভ্রাতৃত্ব ও দ্বীনি সচেতনতা বৃদ্ধি করার পাশাপাশি নববী আদর্শে ঐক্যবদ্ধ করা এর অন্যতম লক্ষ্য ও উদ্দেশ্য।</p>
+            <a href="#membersform" class="cta-button">সদস্য ফরম পূরণ করুন</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>আমাদের সম্পর্কে</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                   
+                   <p>কিছু পরিকল্পনা কে সামনে রেখে প্রতিষ্ঠিত হয় ‘স্টেশন পাড়া দাওয়াহ্ কমিউনিটি’। ‘স্টেশন পাড়া দাওয়াহ্ কমিউনিটি’ একটি সামাজিক সেবা মূলক প্লাটফর্ম। মুসলিমদের মাঝে ভ্রাতৃত্ব ও দ্বীনি সচেতনতা বৃদ্ধি করার পাশাপাশি নববী আদর্শে ঐক্যবদ্ধ করা এর অন্যতম লক্ষ্য ও উদ্দেশ্য। বিশেষ করে এটি ইলম অর্জনকে বিশেষ ভাবে প্রাধান্য দেয়। দ্বীনি সচেতনতা তৈরিতে এটি বিশেষ ভাবে ভূমিকা রাখবে বিভিন্ন কার্যক্রমের মাধ্যমে।
+বর্তমান সময়ে মুসলিম উম্মাহর অধঃপতন এর কারণ গুলোর অন্যতম একটি হলো ইসলাম সর্ম্পকে অজ্ঞ। অথবা বলতে পারেন ফরজ ইলমটুকু সর্ম্পকে গাফেল। </p>
+                    <p>মানুষ মাত্রই পরোপকারী। সমাজে সব থেকে খারাপ মানুষটাও কোনো না কোনো ভাবে মানুষের সাহায্য সেবা করে থাকে বিভিন্ন ভাবে। এটার একটা বাস্তব উদাহরণ হলো একটি নষ্ট ঘড়ি। নষ্ট হলেও দিনে দুইবার সঠিক সময় প্রদান করে। সব থেকে বড় কথা অন্যের পাশে থাকা বিষয়ে ইসলাম আমাদের উদ্ভুদ্ধ করে। এটি আমাদের জন্য নেকীর  কাজ। কোনো কাজে একক ভাবে কাউকে সহযোগিতা করলে যেমন মানুষের পাশে থাকা হয়। ঠিক একই কাজ যদি দল হয়ে একাধিক জন করি,তাহলে সেটি যেমন সহজ ভাবে সম্পন্ন হয়,তেমনি কাজে আনন্দ পাওয়া যায় এবং এটি সমাজের মানুষদের মাঝে ভ্রাতৃত্ব সৃষ্টি করে।</p>
+                    <p>ইসলাম আমাদের একে অপরের সাথে সুসম্পর্ক বজায় রাখতে শেখায়। আমাদের কমিউনিটি এই ক্ষেত্রে অগ্রগামী ভূমিকা পালন করবে ইন শা আল্লাহ।</p>
+                <p>বর্তমান সমাজ ব্যবস্থায় ইসলাম সমর্থন করে না এমন নানা কাজ ও আচার অনুষ্ঠান এর অনুপ্রবেশ ঘটেছে। যার মূল হোতা পশ্চিমা দেশগুলোকে বলা হয়। পশ্চিমাদের নানান দৃষ্টি-ভঙ্গি মুসলিম সমাজে একনিষ্ঠভাবে  ইসলাম পালন কাল হয়ে দাঁড়িয়েছে। মুসলিম বিশ্বের আনাচে কানাচে আগুলোর অনুপ্রবেশ ঘটেছে। আমাদের জেনারেশন এর হাজারো যুবক এইসকল অপসংস্কৃতি তে অজান্তেই মত্ত হয়ে গিয়েছে। অতএব এগুলো বিতারিত করার জন্য এই যুবক জেনারেশন কে এগিয়ে আসতে হবে।</p>
+                <p>এদেরকেই উদ্দ্যেগ নিয়ে ইসলাম কে ছড়িয়ে দিতে হবে। ইসলামের সুমহান আদর্শ কে উপস্থাপন করতে হবে সমাজে। এই ক্ষেত্রেও আমাদের কমিউনিটি অগ্রগামী ভূমিকা পালন করবে  ইন শা আল্লাহ।</p>
+                
+                
+                
+                </div>
+                <div class="about-image">
+                    <img src="https://unsplash.com/photos/blue-book-beside-brown-wooden-stick-Dxi6KbpvUgA" alt="স্টেশন পাড়া দাওয়াহ্ কমিউনিটি">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section class="activities" id="activities">
+        <div class="container">
+            <div class="section-title">
+                <h2>আমাদের লক্ষ্য </h2>
+            </div>
+            <div class="activity-cards">
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-book-quran"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h3>কুরআন শিক্ষা কার্যক্রম</h3>
+                        <p>প্রতি সপ্তাহে শিশু ও বড়দের জন্য কুরআন শিক্ষা ক্লাস, তাজবিদ সহ কুরআন তিলাওয়াত প্রশিক্ষণ এবং হিফজ ক্লাস পরিচালনা করা হবে ইনশাআল্লাহ।</p>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h3>সেমিনার ও ইসলাহী মাহফিল</h3>
+                        <p>মাসিক ইসলাহী মাহফিল, ইসলামিক বই পাঠচক্র আয়োজন , যুব সেমিনার এবং পরিবার পরিকল্পনা  বিষয়ক আলোচনা সভার আয়োজন করা হবে ইনশাআল্লাহ।</p>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h3>সামাজিক সেবা</h3>
+                        <p>দরিদ্র ও অসহায় পরিবারদের সহায়তা, রমজান মাসে ইফতার বিতরণ,দরিদ্র  শিক্ষার্থীদের শিক্ষা উপকরণ বিতরণ  সহ  সামাজিক সেবামুলক কাজের ক্যাম্প আয়োজন করা হয়।</p>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h3>আদর্শ যুব সমাজ গঠন </h3>
+                        <p>তরুণ প্রজন্মকে পশ্চিমা অপসংস্কৃতি ও অনৈতিক কর্মকাণ্ড থেকে মুক্ত করে ইসলামের সুমহান আদর্শে দীক্ষি করা আমাদের অন্যতম লক্ষ্য ইনশাআল্লাহ।</p>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h3>ফরজ ইলম অর্জন </h3>
+                        <p>সর্বস্তরের মানুষের মাঝে ইসলামের মৌলিক ও জরুরি জ্ঞান (ফরজ ইলম) পৌঁছে দেওয়া এবং দ্বীন সম্পর্কে উদাসীনতা দূর করা। ফরজ সর্ম্পকে নূন্যতম জ্ঞান অর্জনে সহায়তা।</p>
+                    </div> </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h3> ভ্রাতৃত্ব ও ঐক্য প্রতিষ্ঠা </h3>
+                        <p>পারস্পরিক সুসম্পর্ক ও মৈত্রীর বন্ধন সুদৃঢ় করার মাধ্যমে একটি সুশৃঙ্খল কমিউনিটি গড়ে তোলা। </p>
+                    </div> </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- সদস্য ফরম সেকশন -->
+    <section class="membership-form" id="membersform">
+        <div class="container">
+            <div class="section-title">
+                <h2>সদস্য হোন</h2>
+                <p style="color: #666; margin-top: 10px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    আমাদের কমিউনিটির সাথে যুক্ত হন এবং ইসলামের সেবায় অংশ নিন
+                </p>
+            </div>
+            
+            <div class="form-container">
+                <div class="form-header">
+                    <h3>সদস্য ফরম</h3>
+                    <p>নিচের ফরমটি পূরণ করে আমাদের কমিউনিটির সদস্য হোন</p>
+                </div>
+                
+                <div class="form-frame">
+                    <!-- গুগল ফর্ম এম্বেড কোড -->
+                    <iframe 
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSeCXkFb_pw44eJo3pS8aR2yoQWEz3EPMUTQYgBu1vAqwbAKbw/viewform?embedded=true" 
+                        width="100%" 
+                        height="600" 
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0">
+                        লোড হচ্ছে…
+                    </iframe>
+                </div>
+                
+                <div class="form-notes">
+                    <p><i class="fas fa-info-circle"></i> ফরম পূরণ করতে গুগল অ্যাকাউন্টের প্রয়োজন হতে পারে</p>
+                    <p><i class="fas fa-clock"></i> ফরম পূরণ করতে প্রায় ৩-৫ মিনিট সময় লাগবে</p>
+                    <p><i class="fas fa-check-circle"></i> ফরম জমা দেওয়ার পর স্বয়ংক্রিয় কনফার্মেশন পাবেন</p>
+                </div>
+                
+                <div class="direct-link">
+                    <p style="color: #666; margin-bottom: 15px;">যদি ফরম দেখা না যায়, নিচের বাটনে ক্লিক করুন:</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeCXkFb_pw44eJo3pS8aR2yoQWEz3EPMUTQYgBu1vAqwbAKbw/viewform" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> সরাসরি গুগল ফর্মে যান
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>আমাদের কমিটি</h2>
+            </div>
+            <div class="team-members">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>মোঃ আরিফুল ইসলাম </h4>
+                    <p>চেয়ারম্যান, স্টেশন পাড়া দাওয়াহ্ কমিউনিটি </p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4> আব্দুল্লাহ রাহাত </h4>
+                    <p>সাধারণ সম্পাদক</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4> তুহিন ইসলাম </h4>
+                    <p>সদস্য, শিক্ষা বিভাগ</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4> উমর ফারুক <h4>
+                    <p> সদস্য, দাওয়াহ বিভাগ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>যোগাযোগ করুন</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>ঠিকানা</h4>
+                            <p>নীলফামারী রেলওয়ে স্টেশন, নীলফামারী, বাংলাদেশ</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>ফোন নাম্বার</h4>
+                            <p>+8809678636241 </p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>ইমেইল</h4>
+                            <p>stationparadawahcommunity@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>অফিস সময়</h4>
+                            <p>শুক্রবার ছাড়া সপ্তাহের প্রতিদিন সকাল ৯টা থেকে দুপুর ১টা পর্যন্ত</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>স্টেশন পাড়া দাওয়াহ্ কমিউনিটি</h3>
+                    <p>স্টেশন পাড়া দাওয়াহ্ কমিউনিটি একটি সামাজিক সেবা মূলক প্লাটফর্ম। মুসলিমদের মাঝে ভ্রাতৃত্ব ও দ্বীনি সচেতনতা বৃদ্ধি করার পাশাপাশি নববী আদর্শে ঐক্যবদ্ধ করা এর অন্যতম লক্ষ্য ও উদ্দেশ্য।</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>দ্রুত লিংক</h4>
+                    <ul>
+                        <li><a href="#home">হোম</a></li>
+                        <li><a href="#about">আমাদের সম্পর্কে</a></li>
+                        <li><a href="#activities">কার্যক্রম</a></li>
+                        <li><a href="#membersform">সদস্য ফরম</a></li>
+                        <li><a href="#team">কমিটি</a></li>
+                        <li><a href="#contact">যোগাযোগ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>সামাজিক যোগাযোগ</h4>
+                    <p>আমাদের কার্যক্রম সম্পর্কে আপডেট পেতে অনুসরণ করুন</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/SPDawahcommunity"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://youtube.com/@stationparadawahcommunity?si=Qg6-RNoo4M8n-fqx"><i class="fab fa-youtube"></i></a>
+                        <a href="https://chat.whatsapp.com/KZp0JpkLtHkA0iYQKbU7Mp"><i class="fab fa-whatsapp"></i></a>
+                       <a href="mailto:stationparadawahcommunity@gmail.com
+?subject=আমি%20সদস্য%20হতে%20আগ্রহী
+&body=আসসালামু%20আলাইকুম%20ওয়া%20রহমাতুল্লাহি%20ওয়া%20বারাকাতুহুম,%0A%0A
+জনাব,%0A%0A
+আমি%20‘স্টেশন%20পাড়া%20দাওয়াহ্%20কমিউনিটি’-এর%20লক্ষ্য,%20উদ্দেশ্য%20এবং%20আপনাদের%20সমাজ%20সংস্কারমূলক%20কার্যক্রম%20সম্পর্কে%20অবগত%20হয়ে%20অত্যন্ত%20অনুপ্রাণিত।%20বিশেষ%20করে%20দ্বীনি%20ইলম%20অর্জন,%20ভ্রাতৃত্ব%20প্রতিষ্ঠা%20এবং%20পশ্চিমা%20অপসংস্কৃতি%20রোধে%20আপনাদের%20এই%20জামাতবদ্ধ%20প্রচেষ্টায়%20আমি%20একজন%20সক্রিয়%20সদস্য%20হিসেবে%20অংশগ্রহণ%20করতে%20চাই।%0A%0A
+সদস্যপদ%20বিবেচনার%20জন্য%20নিচে%20আমার%20ব্যক্তিগত%20তথ্যাদি%20প্রদান%20করছি:%0A%0A
+নাম:%20[এখানে%20নাম%20লিখুন]%0A
+পিতা/অভিভাবকের%20নাম:%20[এখানে%20লিখুন]%0A
+পেশা:%20[ছাত্র/চাকরিজীবী/ব্যবসায়ী]%0A
+বর্তমান%20ঠিকানা:%20[বিস্তারিত%20ঠিকানা]%0A
+মোবাইল/হোয়াটসঅ্যাপ%20নম্বর:%20[নম্বরটি%20দিন]%0A
+শিক্ষাগত%20যোগ্যতা:%20[সর্বশেষ%20ডিগ্রি/মাদরাসা%20স্তর]%0A
+বিশেষ%20দক্ষতা:%20[লেখালেখি,%20দাওয়াহ্,%20ফান্ড%20কালেকশন,%20প্রচারণা,%20ভলান্টিয়ারিং]%0A
+কেন%20যুক্ত%20হতে%20চান?:%20[সংক্ষেপে%20লিখুন]%0A%0A
+আমি%20সংগঠনের%20সংবিধান%20ও%20নিয়মাবলী%20মেনে%20চলতে%20এবং%20দ্বীনের%20কল্যাণে%20সামর্থ্য%20অনুযায়ী%20সময়%20ও%20শ্রম%20দিতে%20প্রতিশ্রুতিবদ্ধ।%0A%0A
+জাযাকাল্লাহু%20খাইরান।%0A%0A
+বিনীত,%0A
+[আপনার%20নাম]%0A
+তারিখ:%20[আজকের%20তারিখ]
+"/a> <i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© ২০২৩ স্টেশন পাড়া দাওয়াহ্ কমিউনিটি | সকল স্বত্ব সংরক্ষিত</p>
+                <p>Design & Develop By : SPDC TEAM </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
